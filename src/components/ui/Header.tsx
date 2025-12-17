@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Banner from '@/components/ui/Banner';
 
 export default function Header() {
@@ -16,7 +17,7 @@ export default function Header() {
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
           <a href="https://tikloud.github.io" className="flex items-center">
-            <img src="/icon0.svg" className="mr-3 h-6 sm:h-9 rounded-xl" alt="Ti Kloud Logo" />
+            <Image src="/icon0.svg" className="mr-3 h-6 sm:h-9 rounded-xl" alt="Ti Kloud Logo" width={36} height={36} />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Ti Kloud</span>
           </a>
           <div className="flex items-center lg:order-2">

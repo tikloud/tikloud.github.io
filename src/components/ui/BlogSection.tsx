@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function BlogSection() {
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -19,7 +21,7 @@ export default function BlogSection() {
             <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-4">
-                <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
+                <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" width={28} height={28} />
                 <span className="font-medium dark:text-white">
                   Jese Leos
                 </span>
@@ -42,7 +44,7 @@ export default function BlogSection() {
             <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-4">
-                <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
+                <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" width={28} height={28} />
                 <span className="font-medium dark:text-white">
                   Bonnie Green
                 </span>
