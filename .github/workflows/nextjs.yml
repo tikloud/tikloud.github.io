@@ -1,0 +1,63 @@
+name: Next.js
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Next.js site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6.0.1
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: 25.2.1
+          cache: npm
+
+      - name: Setup GitHub Pages for Next.js
+        uses: actions/configure-pages@v5.0.0
+        with:
+          static_site_generator: next
+
+      - name: Restore cache
+        uses: actions/cache@v5.0.1
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm clean-install
+
+      - name: Build with Next.js
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .next
+
+  deploy:
+    name: Deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
