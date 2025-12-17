@@ -14,9 +14,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  lint:
+    name: Lint codebase
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6.0.1
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: 25.2.1
+          cache: npm
+
+      - name: Install dependencies
+        run: npm clean-install
+
+      - name: Run ESLint
+        run: npm run lint
+
   build:
     name: Build Next.js site
     runs-on: ubuntu-latest
+    needs: lint
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v6.0.1
