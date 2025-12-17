@@ -1,5 +1,6 @@
 {
   "name": "tikloud.github.io",
+  "description": "A true open-source cloud solution.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
