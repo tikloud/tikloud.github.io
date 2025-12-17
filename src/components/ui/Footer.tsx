@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://tikloud.github.io" className="flex items-center">
-              <Image src="https://tikloud.github.io/docs/images/logo.svg" className="mr-3 h-8" alt="FlowBite Logo" width={32} height={32} />
+              <Image src="/icon.svg" className="mr-3 h-8 rounded-xl" alt="FlowBite Logo" width={32} height={32} />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ti Kloud</span>
             </a>
           </div>
