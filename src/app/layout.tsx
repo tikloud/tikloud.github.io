@@ -5,6 +5,7 @@ import "@/app/globals.css";
 
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { AuthProviderWrapper } from "@/components/auth-provider-wrapper";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -32,7 +33,9 @@ export default function RootLayout({
     <html lang="fr" className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}>
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
-          {children}
+          <AuthProviderWrapper>
+            {children}
+          </AuthProviderWrapper>
         </TooltipProvider>
       </body>
     </html>
