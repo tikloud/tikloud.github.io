@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { createClient } from "@/lib/supabase/supabase"
 import { Button } from "@/components/ui/button"
@@ -59,7 +60,7 @@ export function SignInForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+          <CardTitle>Sign in to your account</CardTitle>
           <CardDescription>
             Enter your email below to login to your account
           </CardDescription>
@@ -81,12 +82,12 @@ export function SignInForm({
               <Field>
                 <div className="flex items-center">
                   <FieldLabel htmlFor="password">Password</FieldLabel>
-                  <a
-                    href="#"
+                  <Link
+                    href="/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
                     Forgot your password?
-                  </a>
+                  </Link>
                 </div>
                 <Input id="password" name="password" type="password" required disabled={loading} />
               </Field>
@@ -97,10 +98,10 @@ export function SignInForm({
               )}
               <Field>
                 <Button type="submit" disabled={loading}>
-                  {loading ? "Signing in..." : "Login"}
+                  {loading ? "Signing in..." : "Sign In"}
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="/sign-up">Sign up</a>
+                  Don&apos;t have an account? <Link href="/sign-up">Sign Up</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>

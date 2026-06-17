@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -84,13 +85,13 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
           <FieldGroup>
             <Field>
               <FieldLabel htmlFor="full_name">Full Name</FieldLabel>
-              <Input id="full_name" full_name="full_name" type="text" placeholder="John Doe" required disabled={loading} />
+              <Input id="full_name" name="full_name" type="text" placeholder="John Doe" required disabled={loading} />
             </Field>
             <Field>
               <FieldLabel htmlFor="email">Email</FieldLabel>
               <Input
                 id="email"
-                full_name="email"
+                name="email"
                 type="email"
                 placeholder="m@example.com"
                 required
@@ -103,7 +104,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
             </Field>
             <Field>
               <FieldLabel htmlFor="password">Password</FieldLabel>
-              <Input id="password" full_name="password" type="password" required disabled={loading} />
+              <Input id="password" name="password" type="password" required disabled={loading} />
               <FieldDescription>
                 Must be at least 8 characters long.
               </FieldDescription>
@@ -112,7 +113,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
               <FieldLabel htmlFor="confirm-password">
                 Confirm Password
               </FieldLabel>
-              <Input id="confirm-password" full_name="confirm-password" type="password" required disabled={loading} />
+              <Input id="confirm-password" name="confirm-password" type="password" required disabled={loading} />
               <FieldDescription>Please confirm your password.</FieldDescription>
             </Field>
             {error && (
@@ -126,7 +127,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
                   {loading ? "Creating account..." : "Create Account"}
                 </Button>
                 <FieldDescription className="px-6 text-center">
-                  Already have an account? <a href="/sign-in">Sign in</a>
+                  Already have an account? <Link href="/sign-in">Sign In</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>
