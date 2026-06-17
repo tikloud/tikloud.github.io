@@ -1,18 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "lsp": {
-    "disabled": false,
-    "command": [
-      "npx",
-      "eslint"
-    ],
-    "extensions": [
-      ".ts",
-      ".tsx",
-      ".js",
-      ".jsx"
-    ],
-    "env": {},
-    "initialization": {}
+    "eslint": {
+      "command": [
+        "eslint",
+        "--stdin",
+        "--stdin-filename",
+        "{file}"
+      ],
+      "extensions": [
+        ".ts",
+        ".tsx",
+      ]
+    }
   }
 }
