@@ -23,6 +23,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale,
     // Load messages using dynamic import for better bundling
     // Messages are loaded at build time for static export
-    messages: (await import(`../messages/${locale}.json`)).default
+    messages: (await import(`../../messages/${locale}.json`)).default
   };
 });

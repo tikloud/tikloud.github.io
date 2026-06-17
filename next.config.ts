@@ -8,6 +8,6 @@ const nextConfig: NextConfig = {
 };
 
 // Initialize next-intl plugin with the request config path
-const withNextIntl = createNextIntlPlugin('./i18n.ts');
+const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
 
 export default withNextIntl(nextConfig);
