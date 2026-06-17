@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Ti Kloud",
+    "description": "Codez, contribuez, reprenez le contrôle."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "sign_in": "Se connecter",
+    "sign_up": "S'inscrire",
+    "logout": "Se déconnecter"
+  },
+  "homepage": {
+    "heading": "Bienvenue sur Ti Kloud",
+    "description": "Votre plateforme pour coder, contribuer et reprendre le contrôle."
+  },
+  "language_switcher": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  }
+}

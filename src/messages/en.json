@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Ti Kloud",
+    "description": "Code, contribute, take back control."
+  },
+  "navigation": {
+    "home": "Home",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "logout": "Logout"
+  },
+  "homepage": {
+    "heading": "Welcome to Ti Kloud",
+    "description": "Your platform for coding, contributing, and taking back control."
+  },
+  "language_switcher": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit"
+  }
+}

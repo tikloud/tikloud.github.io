@@ -1,43 +1,13 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-
-import "@/app/globals.css";
-
-import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip"
-import { AuthProviderWrapper } from "@/components/auth-provider-wrapper";
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Ti Kloud",
-  description: "Codez, contribuez, reprenez le contrôle.",
-};
-
+/**
+ * Root layout for Next.js App Router with i18n
+ * 
+ * This is a minimal pass-through layout. The actual layout
+ * with locale-aware rendering is in [locale]/layout.tsx
+ */
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="fr" className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}>
-      <body className="min-h-full flex flex-col">
-        <TooltipProvider>
-          <AuthProviderWrapper>
-            {children}
-          </AuthProviderWrapper>
-        </TooltipProvider>
-      </body>
-    </html>
-  );
+}) {
+  return children;
 }

@@ -18,12 +18,14 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { createClient } from "@/lib/supabase/supabase"
+import { createClient } from "@/lib/supabase"
+import { useTranslations } from "next-intl"
 
 export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const t = useTranslations()
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -66,7 +68,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
       alert("Account created! Please check your email for confirmation.")
       router.push("/sign-in")
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to create account")
+      setError(err instanceof Error ? err.message : t('common.error'))
     } finally {
       setLoading(false)
     }
@@ -124,10 +126,10 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
             <FieldGroup>
               <Field>
                 <Button type="submit" disabled={loading}>
-                  {loading ? "Creating account..." : "Create Account"}
+                  {loading ? t('common.loading') : t('navigation.sign_up')}
                 </Button>
                 <FieldDescription className="px-6 text-center">
-                  Already have an account? <Link href="/sign-in">Sign In</Link>
+                  Already have an account? <Link href="/sign-in">{t('navigation.sign_in')}</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { createClient } from "@/lib/supabase/supabase"
+import { createClient } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -20,6 +20,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { useTranslations } from "next-intl"
 
 export function SignInForm({
   className,
@@ -28,6 +29,7 @@ export function SignInForm({
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const t = useTranslations()
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -50,7 +52,7 @@ export function SignInForm({
       router.push("/")
       router.refresh()
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to sign in")
+      setError(err instanceof Error ? err.message : t('common.error'))
     } finally {
       setLoading(false)
     }
@@ -60,7 +62,7 @@ export function SignInForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Sign in to your account</CardTitle>
+          <CardTitle>{t('navigation.sign_in')}</CardTitle>
           <CardDescription>
             Enter your email below to login to your account
           </CardDescription>
@@ -98,10 +100,10 @@ export function SignInForm({
               )}
               <Field>
                 <Button type="submit" disabled={loading}>
-                  {loading ? "Signing in..." : "Sign In"}
+                  {loading ? t('common.loading') : t('navigation.sign_in')}
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <Link href="/sign-up">Sign Up</Link>
+                  Don&apos;t have an account? <Link href="/sign-up">{t('navigation.sign_up')}</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>
