@@ -33,7 +33,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
     const email = formData.get("email") as string
     const password = formData.get("password") as string
     const confirmPassword = formData.get("confirm-password") as string
-    const name = formData.get("name") as string
+    const full_name = formData.get("full_name") as string
 
     if (password !== confirmPassword) {
       setError("Passwords do not match")
@@ -54,7 +54,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
         password,
         options: {
           data: {
-            full_name: name,
+            full_name: full_name,
           },
         },
       })
@@ -83,14 +83,14 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
         <form onSubmit={handleSubmit}>
           <FieldGroup>
             <Field>
-              <FieldLabel htmlFor="name">Full Name</FieldLabel>
-              <Input id="name" name="name" type="text" placeholder="John Doe" required disabled={loading} />
+              <FieldLabel htmlFor="full_name">Full Name</FieldLabel>
+              <Input id="full_name" full_name="full_name" type="text" placeholder="John Doe" required disabled={loading} />
             </Field>
             <Field>
               <FieldLabel htmlFor="email">Email</FieldLabel>
               <Input
                 id="email"
-                name="email"
+                full_name="email"
                 type="email"
                 placeholder="m@example.com"
                 required
@@ -103,7 +103,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
             </Field>
             <Field>
               <FieldLabel htmlFor="password">Password</FieldLabel>
-              <Input id="password" name="password" type="password" required disabled={loading} />
+              <Input id="password" full_name="password" type="password" required disabled={loading} />
               <FieldDescription>
                 Must be at least 8 characters long.
               </FieldDescription>
@@ -112,7 +112,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
               <FieldLabel htmlFor="confirm-password">
                 Confirm Password
               </FieldLabel>
-              <Input id="confirm-password" name="confirm-password" type="password" required disabled={loading} />
+              <Input id="confirm-password" full_name="confirm-password" type="password" required disabled={loading} />
               <FieldDescription>Please confirm your password.</FieldDescription>
             </Field>
             {error && (
