@@ -9,7 +9,7 @@
  * since JavaScript may be disabled or the file may be
  * accessed directly.
  */
-import { defaultLocale } from '@/lib/i18n/routing';
+import { defaultLocale } from '@/i18n/routing';
 
 export default function RootPage() {
   // This will be statically rendered at build time

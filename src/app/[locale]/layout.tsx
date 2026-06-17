@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing, type Locale } from '@/lib/i18n/routing';
+import { routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProviderWrapper } from '@/components/auth-provider-wrapper';

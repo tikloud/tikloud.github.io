@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { routing } from '@/lib/i18n/routing';
+import { routing } from '@/i18n/routing';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import Link from 'next/link';
 

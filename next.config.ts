@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
 };
 
-// Initialize next-intl plugin with the request config path
-const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
+// Initialize next-intl plugin (uses default path: ./src/i18n/request.ts)
+const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl(nextConfig);
