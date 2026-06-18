@@ -1,11 +1,14 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
+
 import { routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProviderWrapper } from '@/components/auth-provider-wrapper';
-import { Geist, Geist_Mono, Inter } from 'next/font/google';
+
+import '@/app/globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
